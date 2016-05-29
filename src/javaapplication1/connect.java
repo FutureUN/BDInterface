@@ -58,6 +58,10 @@ public class connect {
             System.out.println("Imposible cerrar conexion ... FAIL");
         }
     }
+    public void printSomething()
+    {
+        System.out.println("aslkfdj");
+    }
     public void queryC()
     {
         

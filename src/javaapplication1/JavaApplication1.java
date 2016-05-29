@@ -88,6 +88,7 @@ public class JavaApplication1 {
         } catch (SQLException ex) {
             System.out.println("Imposible realizar consulta ... FAIL");
         }
+        c1.printSomething();
         c1.closeConection();
 //Espacio para realizar consultas, agregar registros, eliminar registros, etc...
 //desconectar
