@@ -30,33 +30,6 @@ public class Estetica {
         jf = new Loggin();
         jf.setVisible(true);
 
-        connect c1 = new connect("root", "root");
-        c1.initConection();
-
-        System.out.println("sfddf");
-
-        
-        try {
-            // Preparamos la consulta
-            Statement s = c1.getConnection().createStatement();
-            ResultSet rs = s.executeQuery("select * from Cliente");
-            // Recorremos el resultado, mientras haya registros para leer, y escribimos
-           // el resultado en pantalla
-            
-        while (rs.next()) {
-                
-                System.out.println(
-                        "ID: " + rs.getInt(1)
-                        + "\tNombre: " + rs.getString(2) + " " + rs.getString(3)
-                        + "Tel: " + rs.getString(4)
-                        + "\tSexo: " + rs.getString(5)
-                );
-            }
-        } catch (SQLException ex) {
-            System.out.println("Imposible realizar consulta ... FAIL");
-        }
-        c1.printSomething();
-        c1.closeConection();
     }
 
 }
