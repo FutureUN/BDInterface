@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package Estetica;
 import java.sql.*;
-import javaapplication1.TableSql.QueryTableModel;
+import Estetica.TableSql.QueryTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package Estetica;
 
 import java.sql.*;
 
@@ -16,7 +16,7 @@ public class connect {
     private static Connection conexion;
     private static String bd = "estetica";
     private static String user = "root";
-    private static String password = "9704";
+    private static String password = "root";
     private static String host = "localhost";
     private static String server = "jdbc:mysql://" + host + "/" + bd;
 
@@ -33,17 +33,20 @@ public class connect {
         password = S;
     }
 
-    public void initConection() {
+    public static boolean initConection() {
+        boolean flag = false;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conexion = DriverManager.getConnection(server, user, password);
             System.out.println("Conexión a base de datos " + server + " ... OK");
+            flag = true;
         } catch (ClassNotFoundException ex) {
             System.out.println("Error cargando el Driver MySQL JDBC ... FAIL");
         } catch (SQLException ex) {
             System.out.println("Imposible realizar conexion con " + server + " ... FAIL");
-
+         
         }
+        return flag;
     }
     public static Connection getConnection()
     {
