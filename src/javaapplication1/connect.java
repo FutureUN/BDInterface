@@ -16,7 +16,7 @@ public class connect {
     private static Connection conexion;
     private static String bd = "estetica";
     private static String user = "root";
-    private static String password = "root";
+    private static String password = "9704";
     private static String host = "localhost";
     private static String server = "jdbc:mysql://" + host + "/" + bd;
 

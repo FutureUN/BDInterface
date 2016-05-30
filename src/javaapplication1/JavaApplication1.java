@@ -63,7 +63,7 @@ public class JavaApplication1 {
 //            System.out.println("Imposible cerrar conexion ... FAIL");
 //        }
         
-        connect c1 = new connect("root", "root");
+        connect c1 = new connect("root", "9704");
         c1.initConection();
 
         System.out.println("sfddf");
@@ -90,6 +90,11 @@ public class JavaApplication1 {
         }
         c1.printSomething();
         c1.closeConection();
+        
+        
+        
+   
+       
 //Espacio para realizar consultas, agregar registros, eliminar registros, etc...
 //desconectar
     }
