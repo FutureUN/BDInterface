@@ -32,7 +32,6 @@ public class Loggin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rectanglePainter1 = new org.jdesktop.swingx.painter.RectanglePainter();
         jPanel1 = new javax.swing.JPanel();
         userField = new javax.swing.JTextField();
         PasswordField = new javax.swing.JPasswordField();
@@ -195,7 +194,6 @@ public class Loggin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private org.jdesktop.swingx.painter.RectanglePainter rectanglePainter1;
     private javax.swing.JTextField userField;
     // End of variables declaration//GEN-END:variables
  //   static connect cc = new connect("root","root");
