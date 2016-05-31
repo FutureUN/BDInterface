@@ -9,6 +9,7 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import javax.xml.crypto.Data;
 
 
 /**
@@ -21,14 +22,14 @@ static connect cl = new connect("root", "9704");
  
 static class QueryTableModel extends DefaultTableModel {
     
-  String[] cache; 
+  ArrayList cache; 
   int colCount;
   String[] headers; 
 
   Statement statement;
 
   public QueryTableModel() {
-    cache = new String [colCount];
+    cache = new ArrayList();
   }
 
   @Override
@@ -62,22 +63,33 @@ static class QueryTableModel extends DefaultTableModel {
       for (int h = 1; h <= colCount; h++) {
         headers[h - 1] = meta.getColumnName(h);
       }
-      cache = new String [colCount];
+      cache = new ArrayList();
+ 
+
       while (rs.next()) {
-        for (int i = 0; i < colCount; i++) 
-          cache[i] = rs.getString(i + 1);
-          this.addRow(cache);
-       
+        for (int i = 0; i < colCount; i++) {
+          String value = new String();
+          value = meta.getColumnTypeName(i + 1);
+          if( value  == "INT" )
+            cache.add(rs.getInt(i + 1));
+          else if (value == "DOUBLE" )
+            cache.add(rs.getDouble(i + 1));
+          else
+            cache.add(rs.getString(i + 1));
+        }
+      
+          this.addRow(cache.toArray());
+  
       }
       //fireTableChanged(null); //
     } catch (Exception e) {
-      cache = new String[0];
+      //cache = new String[0];
       e.printStackTrace();
     }
   }
+
+ 
    
 }
     
 }
-
-  
