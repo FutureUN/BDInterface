@@ -51,7 +51,7 @@ static class QueryTableModel extends DefaultTableModel {
     
     
     try {
-      connect cl = new connect("root", "9704");
+      connect cl = new connect("62702537", "1234");
 
       cl.initConection();
       Statement st = cl.getConnection().createStatement();
