@@ -34,9 +34,12 @@ public class Cliente extends javax.swing.JFrame {
     void getdates()
     {
         QueryTableModel model = new QueryTableModel();
-       
+        QueryTableModel modelHorarioAll = new QueryTableModel();
         model.setQuery("select * from datos_cliente");
         datos_cli_table.setModel(model);
+        
+        modelHorarioAll.setQuery("select * from vw_cli_serv");
+        horario_all_table.setModel(modelHorarioAll);
         
         
     }
@@ -54,9 +57,12 @@ public class Cliente extends javax.swing.JFrame {
         info_cli = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         datos_cli_table = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        horario_all_table = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -75,20 +81,28 @@ public class Cliente extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(datos_cli_table);
 
+        jButton1.setText("Actualizar mis datos ");
+
         javax.swing.GroupLayout info_cliLayout = new javax.swing.GroupLayout(info_cli);
         info_cli.setLayout(info_cliLayout);
         info_cliLayout.setHorizontalGroup(
             info_cliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(info_cliLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(info_cliLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         info_cliLayout.setVerticalGroup(
             info_cliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, info_cliLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(info_cliLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(jButton1)
                 .addContainerGap())
         );
 
@@ -120,15 +134,28 @@ public class Cliente extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Servicios", jPanel4);
 
+        horario_all_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(horario_all_table);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 308, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Horarios ", jPanel5);
@@ -240,7 +267,9 @@ public class Cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable datos_cli_table;
+    private javax.swing.JTable horario_all_table;
     private javax.swing.JPanel info_cli;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
@@ -249,6 +278,7 @@ public class Cliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
     // End of variables declaration//GEN-END:variables
 }
