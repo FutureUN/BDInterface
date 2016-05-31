@@ -87,6 +87,44 @@ static class QueryTableModel extends DefaultTableModel {
       e.printStackTrace();
     }
   }
+   public void setQuery(String query, Connection cn) {
+    
+    
+    try {
+      
+      Statement st = cn.createStatement();
+      ResultSet rs = st.executeQuery(query);
+      ResultSetMetaData meta = rs.getMetaData();
+      colCount = meta.getColumnCount();
+
+      headers = new String[colCount];
+      for (int h = 1; h <= colCount; h++) {
+        headers[h - 1] = meta.getColumnName(h);
+      }
+     
+
+      while (rs.next()) {
+        cache = new ArrayList();
+        for (int i = 0; i < colCount; i++) {
+          String value = new String();
+          value = meta.getColumnTypeName(i + 1);
+          if( value  == "INT" )
+            cache.add(rs.getInt(i + 1));
+          else if (value == "DOUBLE" )
+            cache.add(rs.getDouble(i + 1));
+          else
+            cache.add(rs.getString(i + 1));
+        }
+      
+          this.addRow(cache.toArray());
+  
+      }
+      //fireTableChanged(null); //
+    } catch (Exception e) {
+      //cache = new String[0];
+      e.printStackTrace();
+    }
+  }
 
  
    
