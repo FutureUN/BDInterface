@@ -9,24 +9,26 @@ package Estetica;
  *
  * @author sebastian
  */
-public class Admin extends javax.swing.JFrame {
+public class Recepcion extends javax.swing.JFrame {
 
     /**
-     * Creates new form Admin
+     * Creates new form Recepcion
      */
-    private static String user = null;
+    private static String user;
+    public Recepcion() {
+        
+        initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     
-    public Admin(String user ) {
-        initComponents();
-        setLocationRelativeTo(null);
-        setResizable(false);
-        this.user = user;
     }
-
-    public Admin() {
+    public Recepcion(String s) {
+        
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        user = s;
+    
     }
 
     /**
@@ -47,7 +49,6 @@ public class Admin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(46, 204, 113));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -104,7 +105,7 @@ public class Admin extends javax.swing.JFrame {
         jTabbedPane2.addTab("tab4", jPanel5);
 
         jLabel2.setFont(new java.awt.Font("Chancery URW", 1, 18)); // NOI18N
-        jLabel2.setText("Admin");
+        jLabel2.setText("Recepcion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -164,20 +165,20 @@ public class Admin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Recepcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Recepcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Recepcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Recepcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin().setVisible(true);
+                new Recepcion().setVisible(true);
             }
         });
     }

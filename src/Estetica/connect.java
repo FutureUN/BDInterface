@@ -37,6 +37,7 @@ public class connect {
         boolean flag = false;
         try {
             Class.forName("com.mysql.jdbc.Driver");
+            System.out.println(user + " " + password);
             conexion = DriverManager.getConnection(server, user, password);
             System.out.println("Conexión a base de datos " + server + " ... OK");
             flag = true;

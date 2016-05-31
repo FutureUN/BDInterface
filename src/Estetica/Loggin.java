@@ -5,7 +5,10 @@
  */
 package Estetica;
 
-import java.sql.Connection;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -142,9 +145,37 @@ public class Loggin extends javax.swing.JFrame {
         connect c1 = new connect(userField.getText(),PasswordField.getText());
         if( c1.initConection())
         {
-            Admin ja = new Admin(userField.getText());
-            ja.setVisible(true);
-            dispose();
+            try {
+                connect cRoot = new connect ("root","root");
+                boolean something = cRoot.initConection();
+                Statement st = cRoot.getConnection().createStatement();
+                String query = "Select Cargo_id from Empleado where Emp_cc = '"+ userField.getText()+"';";
+                System.out.println(query);
+                ResultSet rs = st.executeQuery(query);
+                
+                int cargo = - 1 ;
+                if ( rs.next() )
+                     cargo = rs.getInt(1);
+                JFrame next = new JFrame();
+                switch (cargo) {
+                    case 4:
+                        next = new Admin(userField.getText());
+                        break;
+                    case 3:
+                        next = new Recepcion(userField.getText());
+                        break;
+                    case -1:
+                        next = new Cliente(userField.getText());
+                        break;
+                    default:
+                        next = new Emp(userField.getText());
+                        break;
+                }  
+                next.setVisible(true);
+                dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(Loggin.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         else
         {
