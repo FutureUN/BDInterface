@@ -51,7 +51,7 @@ static class QueryTableModel extends DefaultTableModel {
     
     
     try {
-      connect cl = new connect("62702537", "1234");
+      connect cl = new connect("root", "9704");
 
       cl.initConection();
       Statement st = cl.getConnection().createStatement();
@@ -63,10 +63,10 @@ static class QueryTableModel extends DefaultTableModel {
       for (int h = 1; h <= colCount; h++) {
         headers[h - 1] = meta.getColumnName(h);
       }
-      cache = new ArrayList();
- 
+     
 
       while (rs.next()) {
+        cache = new ArrayList();
         for (int i = 0; i < colCount; i++) {
           String value = new String();
           value = meta.getColumnTypeName(i + 1);
