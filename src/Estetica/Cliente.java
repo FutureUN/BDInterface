@@ -6,6 +6,7 @@
 package Estetica;
 
 import Estetica.TableSql.QueryTableModel;
+import javax.swing.JFrame;
 
 /**
  *
@@ -29,6 +30,8 @@ public class Cliente extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setTitle("Cliente");
+        getdates();
     }
     
     void getdates()
@@ -40,22 +43,22 @@ public class Cliente extends javax.swing.JFrame {
         QueryTableModel modelProductos = new QueryTableModel();
         QueryTableModel modelMisCompras = new QueryTableModel();
         
-        model.setQuery("select * from datos_cliente");
+        model.setQuery("select * from datos_cliente",user);
         datos_cli_table.setModel(model);
         
-        modelHorarioAll.setQuery("select * from vw_cli_serv");
+        modelHorarioAll.setQuery("select * from horario_all",user);
         horario_all_table.setModel(modelHorarioAll);
         
-        modelAgendaCitas.setQuery("select * from agenda_citas");
+        modelAgendaCitas.setQuery("select * from agenda_citas",user);
         agenda_citas_table.setModel(modelAgendaCitas);
         
-        modelServicios.setQuery ("Select * from vw_cli_serv ");
+        modelServicios.setQuery ("Select * from vw_cli_serv ",user);
         ServiciosTable.setModel(modelServicios);
         
-        modelProductos.setQuery("select * from producto_venta");
+        modelProductos.setQuery("select * from producto_venta",user);
         ProductoTable.setModel(modelProductos);
                 
-        modelMisCompras.setQuery("select * from cliente_compra");
+        modelMisCompras.setQuery("select * from cliente_compra",user);
         MisComprasTable.setModel(modelMisCompras);
     }
     /**
@@ -247,6 +250,11 @@ public class Cliente extends javax.swing.JFrame {
         jScrollPane1.setViewportView(datos_cli_table);
 
         jButton1.setText("Actualizar mis datos ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout info_cliLayout = new javax.swing.GroupLayout(info_cli);
         info_cli.setLayout(info_cliLayout);
@@ -316,12 +324,21 @@ public class Cliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            // TODO add your handling code here:\
+            JFrame obj = new JFrame();
+            System.out.println (user);
+            obj = new InfoCliente(user);
+            obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+       //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */

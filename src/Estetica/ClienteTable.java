@@ -24,7 +24,7 @@ public class ClienteTable extends javax.swing.JFrame {
     void showdates()
     {
         QueryTableModel model = new QueryTableModel();
-        model.setQuery("select Emp_cc,Emp_nombre from Empleado where Emp_nombre = 'Fernando'");
+        model.setQuery("select Emp_cc,Emp_nombre from Empleado where Emp_nombre = 'Fernando'","248465319");
        ClienteTable.setModel(model);
      }
     /**

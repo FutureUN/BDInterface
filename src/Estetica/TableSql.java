@@ -47,12 +47,14 @@ static class QueryTableModel extends DefaultTableModel {
 
 
 
- public void setQuery(String query) {
+ public void setQuery(String query, String user) {
     
     
     try {
-      connect cl = new connect("171182110", "1234");
-
+        System.out.println(user + " dfdf ");
+      connect cl = new connect(user, "1234");
+// empleado - 171182110
+// cliente - 62702537
       cl.initConection();
       Statement st = cl.getConnection().createStatement();
       ResultSet rs = st.executeQuery(query);

@@ -42,7 +42,7 @@ public class Admin extends javax.swing.JFrame {
         modelVenta.setQuery("Select * from Venta", cnAd.getConnection());
         Statement st;
         try {
-            connect cn = new connect("root","root");
+            connect cn = new connect("root","hxW0LNPlu6");
             cn.initConection();
             st = cn.getConnection().createStatement();
             String query = "Select Emp_nombre, Emp_Apellido from Empleado where Emp_cc = " +  user +";";
@@ -580,7 +580,7 @@ public class Admin extends javax.swing.JFrame {
             // TODO add your handling code here:
             // (select sum(CPRO_costo) from CompraProveedor);
             //set ingresos = ()
-            connect cn = new connect("root","root");
+            connect cn = new connect("root","hxW0LNPlu6");
             cn.initConection();
             Statement st = cn.getConnection().createStatement();
             String query = "select sum(Ven_costo) from Venta";

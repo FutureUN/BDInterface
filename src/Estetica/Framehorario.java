@@ -30,7 +30,7 @@ public final class Framehorario extends javax.swing.JFrame {
     void showdates()
     {
         QueryTableModel model = new QueryTableModel();
-        model.setQuery("select * from horarioall");
+        model.setQuery("select * from horarioall","248465319");
         Horariotable.setModel(model);
     }
     
