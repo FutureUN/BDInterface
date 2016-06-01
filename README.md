@@ -2,7 +2,7 @@
 
 
 Para importar el proyecto al netbeans ir a la pestana team ubicada en la barra superior, luego en remote y por ultimo en clone.
-Se abre una ventana y pegar este enlace 
+Se abre una ventana y pegar este enlace https://github.com/FutureUN/BDInterface.git
 
 
 
@@ -10,12 +10,12 @@ Los scritps de creacion e insercion de la base de datos se encuentran en el pack
 
 
 
-Orden de ejecución 
-scripEstetica_conTrans
-Triggers-2
-procedures-2-2
-functions-2
-viewsFinal
-users-2
-permisos
-insertValues_con_Tran
+* Orden de ejecución 
+* scripEstetica_conTrans
+* Triggers-2
+* procedures-2-2
+* functions-2
+* viewsFinal
+* users-2
+* permisos
+* insertValues_con_Tran
