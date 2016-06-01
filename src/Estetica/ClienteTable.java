@@ -19,6 +19,7 @@ public class ClienteTable extends javax.swing.JFrame {
     public ClienteTable() {
         initComponents();
         showdates();
+        
     }
     
     void showdates()
